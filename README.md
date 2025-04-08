@@ -107,12 +107,24 @@ Use CrossValidator to tune models and compare their AUC performance.
 
 **Code Output Example:**
 ```
+
+### === Model Tuning and Comparison ===
+
+| Model             | AUC    |
+|------------------|--------|
+| LogisticRegression | 0.8230 |
+| DecisionTree       | 0.8500 |
+| RandomForest       | 0.8645 ✅ |
+| GBTClassifier      | 0.8577 |
+
+**Best Model:** ✅ `RandomForest` with **AUC = 0.8645**
+
 Tuning LogisticRegression...
-LogisticRegression Best Model Accuracy (AUC): 0.84
+LogisticRegression Best Model Accuracy (AUC): 0.82
 Best Params for LogisticRegression: regParam=0.01, maxIter=20
 
 Tuning DecisionTree...
-DecisionTree Best Model Accuracy (AUC): 0.77
+DecisionTree Best Model Accuracy (AUC): 0.85
 Best Params for DecisionTree: maxDepth=10
 
 Tuning RandomForest...
@@ -121,7 +133,7 @@ Best Params for RandomForest: maxDepth=15
 numTrees=50
 
 Tuning GBT...
-GBT Best Model Accuracy (AUC): 0.88
+GBT Best Model Accuracy (AUC): 0.857
 Best Params for GBT: maxDepth=10
 maxIter=20
 
@@ -141,6 +153,6 @@ maxIter=20
 ### 2. Run the Pr
 
 ```bash
-spark-submit churn_prediction.py
+spark-submit Task1.py
 ```
 ### Make sure to include your original ouput and explain the code
